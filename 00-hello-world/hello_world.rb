@@ -1,3 +1,3 @@
-def hello_world(name:"World")
+def hello_world(name:"")
   name == ""? "Hello, World!" : "Hello, #{name}!"
 end
