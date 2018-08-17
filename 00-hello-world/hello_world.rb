@@ -1,7 +1,3 @@
 def hello_world(name:"World")
-  if name == ""
-    return "Hello, World!"
-  else
-    return "Hello, #{name}!"
-  end
+  name == ""? "Hello, World!" : "Hello, #{name}!"
 end
