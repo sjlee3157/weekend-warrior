@@ -1,8 +1,7 @@
 class Robot
-  attr_writer :name
 
   def initialize
-    @name = self.name
+    @name = name
   end
 
   def reset
@@ -10,15 +9,13 @@ class Robot
   end
 
   def name
+  # this is a reader OR a writer.
+  # if @name = nil, name is a writer
+  # if @name != nil, name is a reader
     two_letters = (0...2).map { (65 + rand(26)).chr }.join
-    three_digits = (0...3).map { rand(9) }.join
+    three_digits = (0...3).map { rand(10) }.join
     robot_id = two_letters + three_digits
-    @name ||= robot_id
-    return @name # can I make this more compact?
+    return @name ||= robot_id
   end
+
 end
-#
-# robot=Robot.new
-# puts robot.name
-# Robot.factory_reset
-# puts robot.name
