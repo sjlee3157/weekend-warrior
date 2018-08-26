@@ -1,7 +1,4 @@
-# weekend-warrior/lib/leap.rb
-
-require "pry"
-require "awesome_print"
+# wk3/weekend-warrior/01-leap/leap.rb
 
 def leap_year?(year)
   if year.class != Integer then raise ArgumentError, "Year must be an integer." end
@@ -18,3 +15,5 @@ def leap_year?(year)
 end
 
 # puts leap_year?(400) ? "leap" : "not leap"
+
+# year % 4 == 0 && year % 100 != 0 || year % 400 == 0
