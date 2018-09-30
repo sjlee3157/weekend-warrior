@@ -11,7 +11,7 @@ class Alouette
     lines_for_verse = []
     n = verse_num
     while n >= 0
-      line = "Et" + " " + PARTS[n] + "!"
+      line = "Et #{PARTS[n]}!"
       lines_for_verse << line
       n -= 1
     end
@@ -21,20 +21,31 @@ class Alouette
   def self.verse(verse_num)
     verse = ""
     2.times do
-      je_te = "Je te plumerai" + " " + PARTS[verse_num] + "." + "\n"
-      verse << je_te
+      verse << "Je te plumerai #{PARTS[verse_num]}.\n"
     end
 
     lines_for_verse = self.lines_for_verse(verse_num)
+
     lines_for_verse.each do |line|
       2.times do
-        verse << line + "\n"
+        verse << "#{line}\n"
       end
     end
-
     verse << VERSE_END
+
+    return verse
   end
 
   def self.sing
+    song = ""
+
+    PARTS.size.times do |i|
+      verse = self.verse(i)
+      song << "#{REFRAIN}\n\n#{verse}\n\n"
+    end
+
+    song << "#{REFRAIN}"
+
+    return song
   end
 end
