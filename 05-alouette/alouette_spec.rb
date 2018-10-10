@@ -90,6 +90,7 @@ A-a-a-ah
       expected_verse.strip!
       Alouette.verse(2).must_equal expected_verse
     end
+  binding.pry
   end
 
   describe "sing" do

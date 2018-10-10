@@ -45,7 +45,7 @@ class Alouette
     end
 
     song << "#{REFRAIN}"
-
+    
     return song
   end
 end
